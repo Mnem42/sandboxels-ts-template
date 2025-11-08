@@ -14,7 +14,6 @@ await esbuild.build({
     outfile: OUT_FILE,
     platform: "browser",
     logLevel: "error",
-
     bundle: true,
 
     banner: {
