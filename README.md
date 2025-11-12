@@ -6,6 +6,39 @@ but you can manually use tsc if you want to.
 Esbuild is used by the build script because it's much faster than TSC, but if you
 prefer another build system, you can make a build script for it or invoke it manually.
 
+## Initialisation
+
+### Tools
+
+```bash
+git submodule update --recursive --init
+npm install
+```
+
+Line 1 fills in the submodules `sandboxels` and `types`, because otherwise,
+they're empty folders.
+
+Line 2 installs the build dependencies (eslint and esbuild).
+
+### Edits
+
+To set the name of the mod, uncomment this line in build.mjs and replace `[MOD_NAME]`
+with the name you want the mod to have *without* the .js extension (e.g. if you want
+it to be called `test.js`, set it to `test`)
+
+```js
+// const MOD_NAME = "[name]"
+```
+
+## Usage
+
+To compile the mod into a js file, either use `npm run build` or `node build.mjs`.
+`npm run build` is set to just run the latter, so the only difference is the terminal
+output.
+
+To update the submodule contents, which you should do occasionally (because they're
+in active development), run `git submodule update --recursive`.
+
 ## Targets
 
 By default, it's set to build for the latest version of ECMAScript supported. If you
@@ -16,6 +49,6 @@ need to (e.g. `es2017`)
 
 ```json
   "compilerOptions": {
-    "target": "es2017",
+    "target": "esnext",
     "module": "commonjs",
 ```
