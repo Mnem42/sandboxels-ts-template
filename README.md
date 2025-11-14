@@ -32,12 +32,26 @@ it to be called `test.js`, set it to `test`)
 
 ## Usage
 
-To compile the mod into a js file, either use `npm run build` or `node build.mjs`.
-`npm run build` is set to just run the latter, so the only difference is the terminal
-output.
+### Compiling
 
-To update the submodule contents, which you should do occasionally (because they're
-in active development), run `git submodule update --recursive`.
+Either use `npm run build` or `node build.mjs`. `npm run build` is set to just
+run the latter, so the only difference is the terminal output.
+
+### Updating submodules
+
+To update the submodule contents, which you should do occasionally (because they
+are in active development), run `git submodule update --recursive`.
+
+### Pull requesting changes
+
+#### Github CLI
+
+```bash
+gh auth login
+gh pr create --title <title> --body <body>
+```
+
+First login with `gh auth login` and then create a pull request.
 
 ## Targets
 
