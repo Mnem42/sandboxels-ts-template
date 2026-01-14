@@ -36,6 +36,40 @@ run the latter, so the only difference is the terminal output.
 To update the submodule contents, which you should do occasionally (because they
 are in active development), run `git submodule update --recursive --remote`.
 
+### Note on bundling HTML and CSS
+
+For bundling HTML and CSS into the JS files outputted, `build.mjs` has this in it:
+```js
+loader: {
+    "*.html": "text",
+    "*.css": "text"
+}
+```
+This is needed because, by default, CSS files are outputted "next to" the output JS, and esbuild
+has no default behaviour defined for HTML.
+
+For importing these, you can use something like this:
+```ts
+// NOTE: you do still have to manually add this into the DOM, the
+// imports just put the text in the file into a constant
+import HTML from "../assets/thing.html"
+import CSS  from "../assets/style.css"
+```
+This will cause errors with eslint since it doesn't "know" that it's fine, but it really does
+bundle perfectly well with esbuild.
+
+If you need to import other dependencies similarly, you can add extra extensions if the default
+behaviours (as documented in [the esbuild docs](https://esbuild.github.io/content-types/)) aren't
+correct for what you want to do. For example, if you want an image imported as a data URI, you need
+to add a line like
+```js
+"*.png": "dataurl"
+```
+into `loader` so you can access it like
+```ts
+import IMG from "../assets/thing.png"
+```
+
 ### Pull requesting changes
 
 #### Github CLI

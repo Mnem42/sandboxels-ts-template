@@ -16,6 +16,11 @@ await esbuild.build({
     logLevel: "error",
     bundle: true,
 
+    loader: {
+        "*.html": "text",
+        "*.css": "text"
+    },
+
     banner: {
         js: `// ${MOD_NAME}.js`
     },
