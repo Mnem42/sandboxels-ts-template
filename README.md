@@ -1,7 +1,8 @@
 # TS mod template
 
-A template for making mods in TS for sandboxels. It's primarily made for esbuild,
-but you can manually use tsc if you want to.
+A template for making mods in TS for sandboxels with entirely too much submodule
+related fuckery. It's primarily made for esbuild, but you can manually use
+another build system if you want to.
 
 Esbuild is used by the build script because it's much faster than TSC, but if you
 prefer another build system, you can make a build script for it or invoke it manually.
@@ -10,15 +11,8 @@ prefer another build system, you can make a build script for it or invoke it man
 
 ### Tools
 
-```bash
-git submodule update --recursive --init
-npm install
-```
-
-Line 1 fills in the submodules `sandboxels` and `types`, because otherwise,
-they're empty folders.
-
-Line 2 installs the build dependencies (eslint and esbuild).
+To quickly and easily initialise the submodules and npm, run `init.ps1` for powershell or `init.sh`
+for sh or bash. They run effectively the same thing, they're mostly just named differently.
 
 ### Edits
 
@@ -40,7 +34,7 @@ run the latter, so the only difference is the terminal output.
 ### Updating submodules
 
 To update the submodule contents, which you should do occasionally (because they
-are in active development), run `git submodule update --recursive`.
+are in active development), run `git submodule update --recursive --remote`.
 
 ### Pull requesting changes
 
