@@ -23,7 +23,6 @@ await esbuild.build({
 
         // Use dataurl for .png and .svg (you probably need to extend this list anyway)
         ".png": "dataurl",
-        '.bmp': "dataurl",
         ".svg": "dataurl"
     },
 
