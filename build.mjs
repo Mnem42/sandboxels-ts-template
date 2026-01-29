@@ -17,13 +17,10 @@ await esbuild.build({
     bundle: true,
 
     loader: {
-        // Force .html and .css to load as text
+        // Force .html, .svg, and .css to load as text
         ".html": "text",
         ".css": "text",
-
-        // Use dataurl for .png and .svg (you probably need to extend this list anyway)
-        ".png": "dataurl",
-        ".svg": "dataurl"
+        ".svg": "text"
     },
 
     banner: {
