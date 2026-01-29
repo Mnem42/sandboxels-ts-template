@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Installing submodules..."
 git submodule update --recursive --init --remote
 
