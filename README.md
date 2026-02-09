@@ -34,7 +34,7 @@ run the latter, so the only difference is the terminal output.
 ### Updating submodules
 
 To update the submodule contents, which you should do occasionally (because they
-are in active development), run `git submodule update --recursive --remote`.
+are in active development), run `git submodule sync --recursive`.
 
 ### Note on bundling HTML and CSS
 
