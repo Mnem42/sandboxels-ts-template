@@ -79,7 +79,8 @@ gh auth login
 gh pr create --title <title> --body <body>
 ```
 
-First login with `gh auth login` and then create a pull request.
+First login with `gh auth login` and then create a pull request in the sandboxels-mods dir. This is
+because you're no longer meant to use the sandboxels repo for submitting mods.
 
 ## Targets
 
