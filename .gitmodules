@@ -4,6 +4,3 @@
 [submodule "sandboxels-mods"]
 	path = sandboxels-mods
 	url = https://github.com/R74nCom/Sandboxels-Mods
-[submodule "sandboxels"]
-	path = sandboxels
-	url = https://github.com/R74nCom/sandboxels
